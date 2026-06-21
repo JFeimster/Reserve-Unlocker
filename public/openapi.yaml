@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+  title: Reserve Unlocker API
+  description: Public stateless utility API engine for analyzing Amazon FBA trapped capital and DD+7 bottlenecks.
+  version: 1.0.0
+servers:
+  - url: https://localhost:3000/api
+paths:
+  /analyze-settlement:
+    post:
+      summary: Process local settlement report data arrays
+      operationId: analyzeSettlement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      total:
+                        type: number
+                      reserve_amount:
+                        type: number
+      responses:
+        '200':
+          description: Calculated reserve parameters array
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  trapped_capital:
+                    type: number
+                  available_capital:
+                    type: number
+                  velocity_score:
+                    type: number
+  /velocity-projection:
+    post:
+      summary: Project potential rollout metrics
+      operationId: projectVelocity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                historicalVelocity:
+                  type: number
+                currentReserve:
+                  type: number
+      responses:
+        '200':
+          description: Successful generation output
+  /fee-nullifier:
+    post:
+      summary: Execute cost delta evaluations
+      operationId: feeNullifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: number
+                factorRate:
+                  type: number
+      responses:
+        '200':
+          description: Delta output metrics
