@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ctaButton) {
         ctaButton.addEventListener('click', (e) => {
             e.preventDefault();
-            document.querySelector('#tool').scrollIntoView({ behavior: 'smooth' });
+            const targetSection = document.querySelector('#tool');
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     }
 });
