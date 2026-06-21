@@ -1,16 +1,11 @@
-# Reserve Unlocker | Engineering-as-Marketing
-A high-velocity utility tool designed to help Amazon FBA sellers navigate DD+7 payout bottlenecks.
+# Reserve Unlocker[cite: 1]
 
-## Core Features
-* **Privacy-First Analysis:** All financial data is processed client-side. No API keys or server-side storage required.
-* **Capital Velocity Tracking:** Visualize trapped vs. available funds instantly.
-* **Luxury-Futurism Design:** Built with a high-contrast dark fintech aesthetic.
+Production-ready, client-side execution framework for parsing Amazon FBA settlement summaries and rendering immediate capital visibility metrics without SP-API constraints[cite: 1].
 
-## Deployment
-1. **Frontend:** Deployed via Vercel for high-performance edge delivery.
-2. **Framework:** React + Tailwind CSS + Recharts.
-3. **Architecture:** Local-only CSV parsing ensures compliance with Seller Central data policies without needing SP-API certification.
+## Quick Start
+1. Run `npm install`
+2. Run `npm run dev` to start the local instance.
+3. Drop an Amazon Settlement `.csv` report into the processing terminal window.
 
-## Roadmap
-* [ ] Integrate MCP (Model Context Protocol) for automated data parsing.
-* [ ] Add predictive forecasting based on historical settlement velocity.
+## Architectural Guidelines
+* All API endpoints inside `/api` are configured for unauthenticated headless access to work with automated external workflows or custom AI actions seamlessly[cite: 1].
