@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "public": false,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "git": {
+    "deploymentEnabled": false
+  },
+  "rewrites": [
+    { "source": "/api/analyze-settlement", "destination": "/api/analyze-settlement.js" },
+    { "source": "/api/velocity-projection", "destination": "/api/velocity-projection.js" },
+    { "source": "/api/fee-nullifier", "destination": "/api/fee-nullifier.js" },
+    { "source": "/(.*)", "destination": "/public/index.html" }
+  ]
+}
