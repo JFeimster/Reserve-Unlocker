@@ -1,0 +1,23 @@
+paths:
+  /velocity-projection:
+    post:
+      summary: Project future capital availability
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                historicalVelocity: { type: number }
+                currentReserve: { type: number }
+  /fee-nullifier:
+    post:
+      summary: Compare cost of advance vs waiting
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount: { type: number }
+                factorRate: { type: number }
